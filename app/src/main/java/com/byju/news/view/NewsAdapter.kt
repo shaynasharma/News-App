@@ -1,11 +1,13 @@
 package com.byju.news.view
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.byju.news.R
@@ -54,8 +56,15 @@ class NewsAdapter(private var news:List<NewsPaper>):RecyclerView.Adapter<NewsAda
             Glide.with(newsImage.context).load(newspaper.urlToImage).into(newsImage)
 
             itemView.onClick {
-                val bundle = bundleOf("news" to newspaper)
                 Log.e(TAG,"Item clicked : $newspaper")
+                Intent(itemView.context, NewsDetailActivity::class.java).also {
+                    it.putExtra("Image", newspaper.urlToImage);
+                    it.putExtra("Title", newspaper.title);
+                    it.putExtra("Source", newspaper.source?.name);
+                    it.putExtra("Published", Utils().convertToDatePatern(newspaper.publishedAt));
+                    it.putExtra("Discription", newspaper.description);
+                    itemView.context.startActivity(it)
+                }
             }
 
         }

@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.byju.news.R
 import com.byju.news.di.Injection
 import com.byju.news.model.NewsPaper
@@ -35,7 +36,7 @@ class NewsHomeActivity : AppCompatActivity() {
     //ui
     private fun setupUI(){
         adapter= NewsAdapter(viewModel.news.value?: emptyList())
-        recyclerView.layoutManager= LinearLayoutManager(this)
+        recyclerView.layoutManager= LinearLayoutManager(this) as RecyclerView.LayoutManager?
         recyclerView.adapter= adapter
     }
 
