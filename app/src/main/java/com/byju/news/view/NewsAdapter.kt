@@ -1,5 +1,6 @@
 package com.byju.news.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.byju.news.R
-import com.byju.news.Utils
+import com.byju.news.utils.Utils
 import com.byju.news.model.NewsPaper
 import kotlinx.android.synthetic.main.row_news.view.*
+import org.jetbrains.anko.bundleOf
+import org.jetbrains.anko.sdk27.coroutines.onClick
+
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
+const val TAG="CONSOLE"
 
 class NewsAdapter(private var news:List<NewsPaper>):RecyclerView.Adapter<NewsAdapter.MViewHolder>(){
 
@@ -39,11 +47,17 @@ class NewsAdapter(private var news:List<NewsPaper>):RecyclerView.Adapter<NewsAda
         private val newsCompanyName:TextView = view.newsCompanyNameTextView
         private val newsImage:ImageView = view.newsImageView
         private val newsPublishedDate:TextView = view.newsPublishedDateTextView
-        fun bind(museum:NewsPaper){
-            news.text = museum.title
-            newsCompanyName.text = museum.source?.name
-            newsPublishedDate.text = Utils().convertToFormatDate(museum.publishedAt)
-            Glide.with(newsImage.context).load(museum.urlToImage).into(newsImage)
+        fun bind(newspaper:NewsPaper){
+            news.text = newspaper.title
+            newsCompanyName.text = newspaper.source?.name
+            newsPublishedDate.text = Utils().convertToDatePatern(newspaper.publishedAt)
+            Glide.with(newsImage.context).load(newspaper.urlToImage).into(newsImage)
+
+            itemView.onClick {
+                val bundle = bundleOf("news" to newspaper)
+                Log.e(TAG,"Item clicked : $newspaper")
+            }
+
         }
     }
 }

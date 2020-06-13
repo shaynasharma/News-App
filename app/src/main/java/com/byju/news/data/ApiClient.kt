@@ -7,6 +7,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 object ApiClient {
 
     private const val API_BASE_URL = "https://newsapi.org"

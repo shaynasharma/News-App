@@ -7,6 +7,9 @@ import com.byju.news.data.OperationCallback
 import com.byju.news.model.NewsPaper
 import com.byju.news.model.NewsPaperDataSource
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 class NewsHomeViewModel(private val repository: NewsPaperDataSource):ViewModel() {
 
     private val _newsPaper = MutableLiveData<List<NewsPaper>>().apply { value = emptyList() }
@@ -21,18 +24,9 @@ class NewsHomeViewModel(private val repository: NewsPaperDataSource):ViewModel()
     private val _isEmptyList=MutableLiveData<Boolean>()
     val isEmptyList:LiveData<Boolean> = _isEmptyList
 
-    /*
-    If you require that the data be loaded only once, you can consider calling the method
-    "loadMuseums()" on constructor. Also, if you rotate the screen, the service will not be called.
-
-    init {
-        //loadMuseums()
-    }
-     */
-
-    fun loadMuseums(){
+    fun loadNews(){
         _isViewLoading.postValue(true)
-        repository.retrieveMuseums(object:OperationCallback<NewsPaper>{
+        repository.retrieveNews(object:OperationCallback<NewsPaper>{
             override fun onError(error: String?) {
                 _isViewLoading.postValue(false)
                 _onMessageError.postValue( error)

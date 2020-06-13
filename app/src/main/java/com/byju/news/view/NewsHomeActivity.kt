@@ -14,6 +14,9 @@ import com.byju.news.viewmodel.NewsHomeViewModel
 import kotlinx.android.synthetic.main.activity_news_home.*
 import kotlinx.android.synthetic.main.layout_error.*
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 class NewsHomeActivity : AppCompatActivity() {
 
     private lateinit var viewModel: NewsHomeViewModel
@@ -75,7 +78,7 @@ class NewsHomeActivity : AppCompatActivity() {
      //If you require updated data, you can call the method "loadMuseum" here
      override fun onResume() {
         super.onResume()
-        viewModel.loadMuseums()
+        viewModel.loadNews()
      }
 
 }

@@ -1,4 +1,4 @@
-package com.byju.news
+package com.byju.news.utils
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -8,7 +8,7 @@ import java.util.*
  */
 class Utils {
 
-    fun convertToFormatDate(publishedDate: String?): String {
+    fun convertToDatePatern(publishedDate: String?): String {
         if(publishedDate == null){
             return ""
         }

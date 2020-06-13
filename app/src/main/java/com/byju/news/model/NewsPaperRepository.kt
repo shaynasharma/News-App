@@ -8,13 +8,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 const val TAG="CONSOLE"
 
 class MuseumRepository:NewsPaperDataSource {
 
     private var call:Call<MuseumResponse>?=null
 
-    override fun retrieveMuseums(callback: OperationCallback<NewsPaper>) {
+    override fun retrieveNews(callback: OperationCallback<NewsPaper>) {
         call=ApiClient.build()?.museums()
         call?.enqueue(object :Callback<MuseumResponse>{
             override fun onFailure(call: Call<MuseumResponse>, t: Throwable) {

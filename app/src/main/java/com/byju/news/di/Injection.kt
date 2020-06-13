@@ -5,6 +5,9 @@ import com.byju.news.model.NewsPaperDataSource
 import com.byju.news.model.MuseumRepository
 import com.byju.news.viewmodel.ViewModelFactory
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 object Injection {
 
     private val newsDataSource:NewsPaperDataSource = MuseumRepository()
