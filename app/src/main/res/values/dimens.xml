@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardView_default_elevation">10dp</dimen>
+    <dimen name="cardView_default_radius">10dp</dimen>
+    <dimen name="cardView_height">240dp</dimen>
+
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="margin_lower_space">12dp</dimen>
+    <dimen name="margin_medium_space">16dp</dimen>
+    <dimen name="margin_high_space">20dp</dimen>
+    <dimen name="margin_higher_space">24dp</dimen>
+    <dimen name="margin_highest_space">64dp</dimen>
+
+    <dimen name="textView_higher_size">29sp</dimen>
+    <dimen name="textView_high_size">20sp</dimen>
+    <dimen name="textView_medium_size">16sp</dimen>
+    <dimen name="textView_lower_size">14sp</dimen>
+    <dimen name="textView_lowest_size">12sp</dimen>
+
+    <dimen name="progressBar_size">80dp</dimen>
+
+</resources>
