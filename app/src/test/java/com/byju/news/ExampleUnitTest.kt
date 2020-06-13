@@ -1,4 +1,4 @@
-package com.byju
+package com.byju.news
 
 import org.junit.Test
 
