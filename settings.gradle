@@ -1,0 +1,2 @@
+rootProject.name='Byju News Paper'
+include ':app'
