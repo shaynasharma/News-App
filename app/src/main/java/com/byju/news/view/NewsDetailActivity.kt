@@ -22,12 +22,6 @@ import kotlinx.android.synthetic.main.layout_error.*
  */
 class NewsDetailActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: NewsHomeViewModel
-    private lateinit var adapter: NewsAdapter
-
-    companion object {
-        const val TAG= "CONSOLE"
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_detail)

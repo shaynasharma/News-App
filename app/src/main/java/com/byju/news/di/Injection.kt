@@ -2,7 +2,7 @@ package com.byju.news.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.byju.news.model.NewsPaperDataSource
-import com.byju.news.model.MuseumRepository
+import com.byju.news.model.NewsPaperRepository
 import com.byju.news.viewmodel.ViewModelFactory
 
 /**
@@ -10,7 +10,7 @@ import com.byju.news.viewmodel.ViewModelFactory
  */
 object Injection {
 
-    private val newsDataSource:NewsPaperDataSource = MuseumRepository()
+    private val newsDataSource:NewsPaperDataSource = NewsPaperRepository()
     private val newsViewModelFactory = ViewModelFactory(newsDataSource)
 
     fun providerRepository():NewsPaperDataSource{

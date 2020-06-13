@@ -1,82 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/newsPaperImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
-        <ImageView
-            android:id="@+id/newsPaperImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="centerCrop" />
-
-        <RelativeLayout
+        <TextView
+            android:id="@+id/newsTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_marginLeft="@dimen/margin_higher_space"
+            android:layout_marginRight="@dimen/margin_higher_space"
+            android:layout_marginBottom="@dimen/margin_highest_space"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:textColor="@color/lightSilver"
+            android:textSize="@dimen/textView_higher_size"
+            tools:text="@string/news_text" />
 
-            <TextView
-                android:id="@+id/newsTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_highest_space"
-                android:layout_marginLeft="@dimen/margin_higher_space"
-                android:layout_marginRight="@dimen/margin_higher_space"
-                android:fontFamily="@font/roboto_slab_bold"
-                android:textColor="@color/lightSilver"
-                android:textSize="@dimen/textView_higher_size"
-                tools:text="@string/news_text" />
+        <TextView
+            android:id="@+id/newsSourceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsTitleTextView"
+            android:layout_marginLeft="@dimen/margin_higher_space"
+            android:layout_marginRight="@dimen/margin_higher_space"
+            android:layout_marginBottom="@dimen/margin_medium_space"
+            android:fontFamily="@font/roboto_slab"
+            android:textColor="@color/lightSilver"
+            android:textSize="@dimen/textView_high_size"
+            tools:text="@string/news_company_name" />
 
-            <TextView
-                android:id="@+id/newsSourceTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_medium_space"
-                android:layout_marginLeft="@dimen/margin_higher_space"
-                android:layout_marginRight="@dimen/margin_higher_space"
-                android:fontFamily="@font/roboto_slab"
-                android:textColor="@color/lightSilver"
-                android:textSize="@dimen/textView_high_size"
-                android:layout_below="@+id/newsTitleTextView"
-                tools:text="@string/news_company_name" />
+        <TextView
+            android:id="@+id/newsPublishedDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsTitleTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/margin_higher_space"
+            android:layout_marginRight="@dimen/margin_higher_space"
+            android:layout_marginBottom="@dimen/margin_medium_space"
+            android:fontFamily="@font/roboto_slab"
+            android:textColor="@color/lightSilver"
+            android:textSize="@dimen/textView_high_size"
+            tools:text="@string/publishedDate" />
 
-            <TextView
-                android:id="@+id/newsPublishedDateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:textColor="@color/lightSilver"
-                android:textSize="@dimen/textView_high_size"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="@dimen/margin_medium_space"
-                android:layout_marginLeft="@dimen/margin_higher_space"
-                android:layout_marginRight="@dimen/margin_higher_space"
-                tools:text="@string/publishedDate"
-                android:layout_below="@+id/newsTitleTextView"
-                android:layout_alignParentEnd="true" />
-
-            <TextView
-                android:id="@+id/newsDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_medium_space"
-                android:layout_marginLeft="@dimen/margin_higher_space"
-                android:layout_marginRight="@dimen/margin_higher_space"
-                android:fontFamily="@font/roboto_slab"
-                android:textColor="@color/silver"
-                android:textSize="@dimen/textView_lower_size"
-                android:layout_below="@+id/newsSourceTextView"
-                tools:text="@string/news_description" />
-
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/newsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsSourceTextView"
+            android:layout_marginLeft="@dimen/margin_higher_space"
+            android:layout_marginRight="@dimen/margin_higher_space"
+            android:layout_marginBottom="@dimen/margin_medium_space"
+            android:fontFamily="@font/roboto_slab"
+            android:textColor="@color/silver"
+            android:textSize="@dimen/textView_lower_size"
+            tools:text="@string/news_description" />
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

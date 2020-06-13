@@ -42,7 +42,7 @@ class NewsHomeActivity : AppCompatActivity() {
 
     private fun setupViewModel(){
         viewModel = ViewModelProvider(this,Injection.provideViewModelFactory()).get(NewsHomeViewModel::class.java)
-        viewModel.news.observe(this,renderMuseums)
+        viewModel.news.observe(this,renderNews)
 
         viewModel.isViewLoading.observe(this,isViewLoadingObserver)
         viewModel.onMessageError.observe(this,onMessageErrorObserver)
@@ -50,7 +50,7 @@ class NewsHomeActivity : AppCompatActivity() {
     }
 
     //observers
-    private val renderMuseums= Observer<List<NewsPaper>> {
+    private val renderNews= Observer<List<NewsPaper>> {
         Log.v(TAG, "data updated $it")
         layoutError.visibility=View.GONE
         layoutEmpty.visibility=View.GONE
@@ -76,7 +76,7 @@ class NewsHomeActivity : AppCompatActivity() {
         layoutError.visibility=View.GONE
     }
 
-     //If you require updated data, you can call the method "loadMuseum" here
+     //If you require updated data, you can call the method "loadNews" here
      override fun onResume() {
         super.onResume()
         viewModel.loadNews()
