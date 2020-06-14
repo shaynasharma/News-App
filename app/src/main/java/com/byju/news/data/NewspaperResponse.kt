@@ -1,6 +1,6 @@
 package com.byju.news.data
 
-import com.byju.news.model.NewsPaper
+import com.byju.news.data.db.entities.NewsPaper
 
 /**
  * Created by Shayna Sharma on 12,June,2020

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.byju.news.R
 import com.byju.news.utils.Utils
-import com.byju.news.model.NewsPaper
+import com.byju.news.data.db.entities.NewsPaper
 import kotlinx.android.synthetic.main.row_news.view.*
 import org.jetbrains.anko.bundleOf
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -51,7 +51,7 @@ class NewsAdapter(private var news:List<NewsPaper>):RecyclerView.Adapter<NewsAda
         private val newsPublishedDate:TextView = view.newsPublishedDateTextView
         fun bind(newspaper:NewsPaper){
             news.text = newspaper.title
-            newsCompanyName.text = newspaper.source?.name
+//            newsCompanyName.text = newspaper.source?.name
             newsPublishedDate.text = Utils().convertToDatePatern(newspaper.publishedAt)
             Glide.with(newsImage.context).load(newspaper.urlToImage).into(newsImage)
 
@@ -60,7 +60,7 @@ class NewsAdapter(private var news:List<NewsPaper>):RecyclerView.Adapter<NewsAda
                 Intent(itemView.context, NewsDetailActivity::class.java).also {
                     it.putExtra("Image", newspaper.urlToImage);
                     it.putExtra("Title", newspaper.title);
-                    it.putExtra("Source", newspaper.source?.name);
+//                    it.putExtra("Source", newspaper.source?.name);
                     it.putExtra("Published", Utils().convertToDatePatern(newspaper.publishedAt));
                     it.putExtra("Discription", newspaper.description);
                     itemView.context.startActivity(it)

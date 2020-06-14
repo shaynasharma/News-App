@@ -2,6 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.3.61'
+    ext.navigation_version = '2.2.0-alpha02'
     repositories {
         google()
         jcenter()
@@ -10,7 +11,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -40,6 +41,11 @@ ext {
     constraintLayoutVersion = '1.1.3'
     recyclerViewVersion = '1.1.0'
     cardViewVersion = '1.0.0'
+
+    roomVersion = '2.2.5'
+    dependencyInjectionVersion = '6.2.1'
+    materialDesignVersion = '1.3.0-alpha01'
+    coroutinesVersion = '1.3.3'
 
     runnerVersion = '1.2.0'
     espressoVersion = '3.2.0'

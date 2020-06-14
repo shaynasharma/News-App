@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.byju.news.data.OperationCallback
-import com.byju.news.model.NewsPaper
+import com.byju.news.data.db.entities.NewsPaper
 import com.byju.news.model.NewsPaperDataSource
+import net.simplifiedcoding.mvvmsampleapp.util.Coroutines
 
 /**
  * Created by Shayna Sharma on 12,June,2020
@@ -24,26 +25,10 @@ class NewsHomeViewModel(private val repository: NewsPaperDataSource):ViewModel()
     private val _isEmptyList=MutableLiveData<Boolean>()
     val isEmptyList:LiveData<Boolean> = _isEmptyList
 
-    fun loadNews(){
+    suspend fun loadNews() : LiveData<List<NewsPaper>> {
         _isViewLoading.postValue(true)
-        repository.retrieveNews(object:OperationCallback<NewsPaper>{
-            override fun onError(error: String?) {
-                _isViewLoading.postValue(false)
-                _onMessageError.postValue( error)
-            }
 
-            override fun onSuccess(data: List<NewsPaper>?) {
-                _isViewLoading.postValue(false)
-
-                if(data!=null){
-                    if(data.isEmpty()){
-                        _isEmptyList.postValue(true)
-                    }else{
-                        _newsPaper.value= data
-                    }
-                }
-            }
-        })
+       return repository.retrieveNews()
     }
 
 }

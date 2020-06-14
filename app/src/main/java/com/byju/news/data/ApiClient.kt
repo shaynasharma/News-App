@@ -39,6 +39,6 @@ object ApiClient {
 
     interface ServicesApiInterface{
         @GET("/v2/top-headlines?country=us&apiKey=dec52be523424f40915c90202c347c85")
-        fun newspaper(): Call<NewspaperResponse>
+        fun getNewspaper(): Call<NewspaperResponse>
     }
 }

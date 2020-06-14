@@ -1,20 +1,10 @@
 package com.byju.news.view
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.byju.news.R
-import com.byju.news.di.Injection
-import com.byju.news.model.NewsPaper
-import com.byju.news.utils.Utils
-import com.byju.news.viewmodel.NewsHomeViewModel
 import kotlinx.android.synthetic.main.activity_news_detail.*
-import kotlinx.android.synthetic.main.activity_news_home.*
-import kotlinx.android.synthetic.main.layout_error.*
 
 
 /**
