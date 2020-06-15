@@ -1,4 +1,4 @@
-package com.byju.news.data
+package com.byju.news.data.network.responses
 
 import com.byju.news.data.db.entities.NewsPaper
 

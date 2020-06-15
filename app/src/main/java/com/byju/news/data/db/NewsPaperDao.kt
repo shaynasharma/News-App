@@ -11,8 +11,9 @@ import com.byju.news.data.db.entities.NewsPaper
 interface NewsPaperDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllNews(news : List<NewsPaper>)
+    fun saveAllNews(quotes : List<NewsPaper>)
 
     @Query("SELECT * FROM NewsPaper")
     fun getNews() : LiveData<List<NewsPaper>>
+
 }

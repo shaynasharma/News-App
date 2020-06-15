@@ -1,4 +1,4 @@
-package net.simplifiedcoding.mvvmsampleapp.util
+package com.byju.news.utils
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

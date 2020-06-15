@@ -2,12 +2,14 @@ package com.byju.news.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.byju.news.model.NewsPaperDataSource
+import com.byju.news.data.repositories.NewsRepository
 
 /**
  * Created by Shayna Sharma on 12,June,2020
  */
-class ViewModelFactory(private val repository: NewsPaperDataSource):ViewModelProvider.Factory {
+class ViewModelFactory(
+    private val repository: NewsRepository
+) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return NewsHomeViewModel(repository) as T

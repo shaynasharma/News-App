@@ -1,4 +1,4 @@
-package com.byju.news.utils
+package net.simplifiedcoding.mvvmsampleapp.util
 
 import kotlinx.coroutines.*
 
