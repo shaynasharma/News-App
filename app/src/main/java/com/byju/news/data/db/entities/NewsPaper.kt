@@ -10,10 +10,9 @@ import java.io.Serializable
  */
 @Entity
 data class NewsPaper(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey(autoGenerate = false)
+    val publishedAt:String,
     val author:String?,
     val title:String,
     val description:String?,
-    val urlToImage:String?,
-    val publishedAt:String?)
+    val urlToImage:String?)

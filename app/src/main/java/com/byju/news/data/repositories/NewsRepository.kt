@@ -1,5 +1,6 @@
 package com.byju.news.data.repositories
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.byju.news.data.db.AppDatabase
@@ -37,6 +38,7 @@ class NewsRepository(
             try {
                 val response = apiRequest { api.getNewspaper() }
                 news.postValue(response.articles)
+                Log.e("TOTAL News:","${response.totalResults}")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
