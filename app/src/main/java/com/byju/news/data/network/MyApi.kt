@@ -7,6 +7,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 interface MyApi {
 
     @GET("/v2/top-headlines?country=us&apiKey=dec52be523424f40915c90202c347c85")

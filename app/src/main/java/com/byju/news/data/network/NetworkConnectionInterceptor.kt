@@ -9,6 +9,9 @@ import com.byju.news.utils.NoInternetException
 import okhttp3.Interceptor
 import okhttp3.Response
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 class NetworkConnectionInterceptor(
     context: Context
 ) : Interceptor {

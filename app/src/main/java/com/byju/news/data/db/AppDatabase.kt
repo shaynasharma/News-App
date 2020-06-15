@@ -6,6 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.byju.news.data.db.entities.NewsPaper
 
+/**
+ * Created by Shayna Sharma on 12,June,2020
+ */
 @Database(
     entities = [NewsPaper::class],
     version = 1

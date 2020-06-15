@@ -5,6 +5,6 @@
     <string name="news_company_name">CNN</string>
     <string name="news_description">Oil prices crashed by 8 percent early on Thursday</string>
     <string name="empty_list">No News found!</string>
-    <string name="an_error_occurred">An error occurred</string>
+    <string name="an_error_occurred">Make sure you have an active data connection</string>
     <string name="publishedDate">Published Date</string>
 </resources>

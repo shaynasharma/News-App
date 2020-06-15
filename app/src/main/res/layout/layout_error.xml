@@ -19,7 +19,7 @@
         android:layout_marginLeft="@dimen/margin_high_space"
         android:layout_marginRight="@dimen/margin_high_space"
         android:gravity="center"
+        android:text="@string/an_error_occurred"
         android:fontFamily="@font/roboto_slab_bold"
-        android:textColor="@android:color/holo_red_light"
-        tools:text="@string/an_error_occurred" />
+        android:textColor="@android:color/holo_red_light" />
 </LinearLayout>

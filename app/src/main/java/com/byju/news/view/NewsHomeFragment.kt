@@ -17,6 +17,7 @@ import com.byju.news.viewmodel.NewsHomeViewModel
 import com.byju.news.viewmodel.ViewModelFactory
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.layout_error.*
 import kotlinx.android.synthetic.main.news_fragment.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -50,12 +51,16 @@ class NewsHomeFragment : Fragment(), KodeinAware {
         bindUI()
     }
 
-
     private fun bindUI() = Coroutines.main {
         progress_bar.show()
         viewModel.news.await().observe(this, Observer {
             progress_bar.hide()
             initRecyclerView(it.toNewsItem())
+            if (it.toNewsItem().isEmpty()){
+                layoutError.visibility=View.VISIBLE
+            }else{
+                layoutError.visibility=View.GONE
+            }
         })
     }
 
@@ -70,9 +75,7 @@ class NewsHomeFragment : Fragment(), KodeinAware {
             setHasFixedSize(true)
             adapter = mAdapter
         }
-
     }
-
 
     private fun List<NewsPaper>.toNewsItem() : List<NewsItem>{
         return this.map {

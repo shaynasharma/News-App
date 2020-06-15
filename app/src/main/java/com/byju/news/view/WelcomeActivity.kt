@@ -25,7 +25,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     private fun animateWelcomeView() {
-        rootlayout.animate().translationY(-2600f).setDuration(2000).startDelay = 2000
+        rootlayout.animate().translationY(-2600f).setDuration(2000).startDelay = 1600
     }
 
     private fun callHomeActivity() {
