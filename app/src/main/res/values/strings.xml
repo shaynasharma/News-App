@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Byju News Paper</string>
+    <string name="app_name">Byju NewsPaper</string>
     <string name="toolbar_name">HeadLines</string>
     <string name="news_text">News headlines</string>
     <string name="news_company_name">CNN</string>
