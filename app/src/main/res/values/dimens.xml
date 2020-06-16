@@ -11,6 +11,8 @@
     <dimen name="margin_higher_space">24dp</dimen>
     <dimen name="margin_highest_space">64dp</dimen>
 
+    <dimen name="backImage_size">42dp</dimen>
+
     <dimen name="textView_higher_size">29sp</dimen>
     <dimen name="textView_high_size">20sp</dimen>
     <dimen name="textView_medium_size">16sp</dimen>

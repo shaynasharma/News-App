@@ -18,13 +18,15 @@ class NewsDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_detail)
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein_anim)
-
         newsPaperImageView.startAnimation(fadeIn)
         setupUI()
     }
 
     //ui
     private fun setupUI(){
+        backImageView.setOnClickListener {
+            onBackPressed()
+        }
         val arguments =
             requireNotNull(intent?.extras) { "There should be parameters or your more meaningful message." }
 

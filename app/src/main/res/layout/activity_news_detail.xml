@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detail_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:background="@color/darkGrey"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="parent" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -80,5 +81,16 @@
             tools:text="@string/news_description" />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/backImageView"
+        android:layout_width="@dimen/backImage_size"
+        android:layout_height="@dimen/backImage_size"
+        android:layout_marginTop="@dimen/margin_medium_space"
+        android:layout_marginStart="@dimen/default_margin"
+        android:background="@drawable/circle"
+        app:layout_constraintStart_toStartOf="@+id/newsPaperImageView"
+        app:layout_constraintTop_toTopOf="@+id/newsPaperImageView"
+        app:srcCompat="@drawable/baseline_keyboard_backspace_white_18dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
