@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -53,8 +54,10 @@ class NewsHomeFragment : Fragment(), KodeinAware {
 
     private fun bindUI() = Coroutines.main {
         progress_bar.show()
-        viewModel.news.await().observe(this, Observer {
+        viewModel.news.await().observe(viewLifecycleOwner, Observer {
             progress_bar.hide()
+            val fadeIn = AnimationUtils.loadAnimation(context, R.anim.fadein_anim)
+            recyclerView.startAnimation(fadeIn)
             initRecyclerView(it.toNewsItem())
             if (it.toNewsItem().isEmpty()){
                 layoutError.visibility=View.VISIBLE
@@ -65,7 +68,6 @@ class NewsHomeFragment : Fragment(), KodeinAware {
     }
 
     private fun initRecyclerView(newsItem: List<NewsItem>) {
-
         val mAdapter = GroupAdapter<ViewHolder>().apply {
             addAll(newsItem)
         }

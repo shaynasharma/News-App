@@ -10,7 +10,7 @@ import com.byju.news.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class WelcomeActivity : AppCompatActivity() {
-    val appWelcomeText="Byju's NewsPaper"
+    val appWelcomeText="Byju's Newspaper"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     private fun animateWelcomeView() {
-        rootlayout.animate().translationY(-2600f).setDuration(2000).startDelay = 1600
+        rootlayout.animate().translationY(-2600f).setDuration(1800).startDelay = 1000
     }
 
     private fun callHomeActivity() {
@@ -36,6 +36,6 @@ class WelcomeActivity : AppCompatActivity() {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)
             }
-        }, 3500)
+        }, 2500)
     }
 }

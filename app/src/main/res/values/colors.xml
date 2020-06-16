@@ -5,4 +5,5 @@
     <color name="silver">#bababa</color>
     <color name="lightSilver">#f2f2f2</color>
     <color name="white">#ffffff</color>
+    <color name="TransparentGrey">#33000000</color>
 </resources>

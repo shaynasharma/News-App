@@ -3,10 +3,10 @@ package com.byju.news.view
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.byju.news.R
 import kotlinx.android.synthetic.main.activity_news_detail.*
-import kotlinx.android.synthetic.main.activity_news_home.*
 
 
 /**
@@ -19,7 +19,7 @@ class NewsDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_news_detail)
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein_anim)
 
-        detail_view.startAnimation(fadeIn)
+        newsPaperImageView.startAnimation(fadeIn)
         setupUI()
     }
 

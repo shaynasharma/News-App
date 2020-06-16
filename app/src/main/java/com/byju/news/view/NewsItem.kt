@@ -1,12 +1,14 @@
 package com.byju.news.view
 
 import android.content.Intent
+import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import com.byju.news.R
 import com.byju.news.data.db.entities.NewsPaper
 import com.byju.news.databinding.RowNewsBinding
 import com.byju.news.utils.Utils
 import com.xwray.groupie.databinding.BindableItem
+import kotlinx.android.synthetic.main.activity_news_home.*
 
 class NewsItem(
     private val newspaper: NewsPaper
